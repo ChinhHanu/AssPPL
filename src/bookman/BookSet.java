@@ -35,11 +35,14 @@ public class BookSet {
      * TODO: complete this specification
      */
     public void addBook(Book book,Set<Book> books) {
+        
+
         // TODO: complete this code
     	System.out.println("Enter id:");
     	int id = scanInt.nextInt();
-        while(id < 1){
-            System.out.println("Invalid ID. Please re-enter ID");
+        
+        while(  id < 1){
+            System.out.println("Invalid id. Please re-enter!");
             id = scanInt.nextInt();
         }
         
@@ -63,9 +66,21 @@ public class BookSet {
             System.out.println("Invalid publised year. Please re-enter published year");
             publishedYear = scanInt.nextInt();
         }
-    	book = new Book(id, title, authorName, publishedYear);
-    	books.add(book);
-        System.out.println("added successfully!");
+        
+        int count = 0;
+        for(Book book1 : books){
+            if(book1.getId() == id){
+                count += 1;
+            }
+        }
+        if(count == 0){
+            book = new Book(id, title, authorName, publishedYear);
+            books.add(book);
+            System.out.println("added successfully!");
+        }else{
+            System.out.println("This id is existed");
+        }
+    	
     }
     
     /**
@@ -85,6 +100,8 @@ public class BookSet {
     	
     	
     }
+    
+    
     
     /**
      * @requires <tt>this.books</tt> neq empty
