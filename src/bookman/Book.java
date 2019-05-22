@@ -18,29 +18,29 @@ public class Book {
 
 	public Book(int id, String title, String authorName, int publishedYear) {
 		//super();
-            if(ValidateObject()){
+//            if(ValidateObject()){
 		this.id = id;
 		this.title = title;
 		this.authorName = authorName;
 		this.publishedYear = publishedYear;
-            }else{
-                System.out.println("Invalid input information!");
-            }
+//            }else{
+//                System.out.println("Invalid input information!");
+//            }
 	}
 
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-            if(ValidID(id)){
-                
-            
-		this.id = id;
-            }else{
-                System.out.println("Invalid ID");
-            }
-	}
+//	public void setId(int id) {
+//            if(ValidID(id)){
+//                
+//            
+//		this.id = id;
+//            }else{
+//                System.out.println("Invalid ID");
+//            }
+//	}
 
 	public String getTitle() {
 		return title;
@@ -100,7 +100,11 @@ public class Book {
         }
         
         
-        private boolean ValidateObject(){
+//        private boolean ValidateObject(){
+//            return ValidID(id) && ValidTitle(title) && validAuthorName(authorName) && validatePublishedYear(publishedYear);
+//        }
+//        
+        public boolean RepOK(){
             return ValidID(id) && ValidTitle(title) && validAuthorName(authorName) && validatePublishedYear(publishedYear);
         }
 }

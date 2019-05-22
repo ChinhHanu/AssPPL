@@ -38,15 +38,34 @@ public class BookSet {
         // TODO: complete this code
     	System.out.println("Enter id:");
     	int id = scanInt.nextInt();
+        while(id < 1){
+            System.out.println("Invalid ID. Please re-enter ID");
+            id = scanInt.nextInt();
+        }
+        
     	System.out.println("Enter title:");
     	String title = scanString.nextLine();
+        while(title == null || title.length() == 0 || title.length() >80){
+            System.out.println("Invalid Title. Please re-enter Title");
+            title = scanString.nextLine();
+        }
+        
     	System.out.println("Enter AuthorName:");
     	String authorName = scanString.nextLine();
+        while(authorName == null || authorName.length() == 0 || authorName.length()>50){
+            System.out.println("Invalid Author's name. Please re-enter author's name");
+            authorName = scanString.nextLine();
+        }
+        
     	System.out.println("Enter PublishedYear ");
     	int publishedYear = scanInt.nextInt();
+        while(publishedYear < 1900 || publishedYear > 2019){
+            System.out.println("Invalid publised year. Please re-enter published year");
+            publishedYear = scanInt.nextInt();
+        }
     	book = new Book(id, title, authorName, publishedYear);
     	books.add(book);
-        
+        System.out.println("added successfully!");
     }
     
     /**
@@ -59,6 +78,7 @@ public class BookSet {
             
         
             books.remove(book);
+            System.out.println("Remove successfully");
         }else{
             System.out.println("This book is not available!");
         }
